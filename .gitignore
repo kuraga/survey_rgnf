@@ -1,0 +1,5 @@
+*.tmp
+*.lock
+vendor/bundle
+input/
+output/
