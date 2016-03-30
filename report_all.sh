@@ -1,5 +1,10 @@
 #!/bin/bash -x
 
+find input/results -name '*.json' -size 0c -exec rm {} \;
+find input/results -name '*.json' -size 2c -exec rm {} \;
+find input/results -name '*.json' -exec perl -p -i -e 's/"duration":".*?",//g' {} \;
+fdupes -N -d -1 input/results
+
 bundle exec ruby report.rb input/results children/children_storage=Children::ChildrenStorage children/children_processor=Children::ChildrenProcessor,lib/processors/by_question_mapper_processor=ByQuestionMapperProcessor children/common_children_reporter=Children::CommonChildrenReporter > output/children.html
 bundle exec ruby report.rb input/results teachers/teachers_storage=Teachers::TeachersStorage teachers/teachers_processor=Teachers::TeachersProcessor,lib/processors/by_question_mapper_processor=ByQuestionMapperProcessor teachers/common_teachers_reporter=Teachers::CommonTeachersReporter > output/teachers.html
 bundle exec ruby report.rb input/results parents/parents_storage=Parents::ParentsStorage parents/parents_processor=Parents::ParentsProcessor,lib/processors/by_question_mapper_processor=ByQuestionMapperProcessor parents/common_parents_reporter=Parents::CommonParentsReporter > output/parents.html
