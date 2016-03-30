@@ -13,8 +13,7 @@ module Teachers
     def initialize(data)
       super data
 
-      @sample_size = 0
-      fill_descriptions
+      @sample_size = data.values.collect(&:length).max
     end
 
     def report

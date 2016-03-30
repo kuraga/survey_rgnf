@@ -1,5 +1,4 @@
 require_relative 'processor'
-require 'date'
 
 class ByQuestionAndGroupMapperProcessor < Processor
 

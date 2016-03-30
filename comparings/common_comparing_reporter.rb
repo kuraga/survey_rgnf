@@ -13,7 +13,7 @@ module Comparings
     def initialize(data)
       super data
 
-      @sample_size = 0
+      @sample_size = data.values.collect(&:length).max
     end
 
     def report

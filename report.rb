@@ -37,7 +37,7 @@ reporter_file, reporter_class_name = ARGV[3].split '='
 
 
 require_relative storage_file
-processor_file_and_class_names.each do |(processor_file, processor_class_name)|
+processor_file_and_class_names.each do |processor_file, processor_class_name|
   require_relative processor_file
 end
 require_relative reporter_file
