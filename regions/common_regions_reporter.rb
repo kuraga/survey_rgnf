@@ -21,6 +21,7 @@ module Regions
       output "<h1>ВСЕ ПО ПОКОЛЕНИЯМ (всего #{@sample_size})</h1>"
 
       RadioQuestionGroupedReporter.new(@data, 'questionA', @descriptions).report # text
+      RadioQuestionGroupedReporter.new(@data, 'questionA1', @descriptions).report # text
       RadioQuestionGroupedReporter.new(@data, 'questionB', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionC', @descriptions).report # text
       RadioQuestionGroupedReporter.new(@data, 'questionD', @descriptions).report

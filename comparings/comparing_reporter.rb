@@ -15,6 +15,7 @@ module Comparings
     def fill_descriptions
       @descriptions = {}
       @descriptions['questionA'] = 'A. Укажите, пожалуйста, год Вашего рождения:'
+      @descriptions['questionA1'] = 'A1. Ваше поколение:'
       @descriptions['questionB'] = 'B. Ваш пол:'
       @descriptions['questionC'] = 'C. Укажите, пожалуйста, регион, в котором Вы проживаете:'
       @descriptions['questionD'] = 'D. Место проживания:'
