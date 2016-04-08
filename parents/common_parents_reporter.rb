@@ -50,7 +50,7 @@ module Parents
       RadioQuestionReporter.new(@data, 'question22', @descriptions).report
       TextQuestionReporter.new(@data, 'question22_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question23', @descriptions).report
-      TextQuestionReporter.new(@data, 'question23_1_additional', @descriptions).report
+      RadioQuestionReporter.new(@data, 'question23_1_additional', @descriptions).report
       TextQuestionReporter.new(@data, 'question23_2_additional', @descriptions).report
       TextQuestionReporter.new(@data, 'question23_3_additional', @descriptions).report
       TextQuestionReporter.new(@data, 'question23_4_additional', @descriptions).report
@@ -80,6 +80,7 @@ module Parents
       TextQuestionReporter.new(@data, 'question37_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question38', @descriptions).report
       RadioQuestionReporter.new(@data, 'question39', @descriptions).report
+      TextQuestionReporter.new(@data, 'question39_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question40_1', @descriptions).report
       RadioQuestionReporter.new(@data, 'question40_2', @descriptions).report
       RadioQuestionReporter.new(@data, 'question40_3', @descriptions).report
@@ -94,8 +95,8 @@ module Parents
       CheckboxQuestionReporter.new(@data, 'question43', @descriptions).report
       CheckboxQuestionReporter.new(@data, 'question44', @descriptions).report
       RadioQuestionReporter.new(@data, 'question45', @descriptions).report
-      RadioQuestionReporter.new(@data, 'question46', @descriptions).report # text
-      RadioQuestionReporter.new(@data, 'question47', @descriptions).report # text
+      RadioQuestionReporter.new(@data, 'question46', @descriptions).report
+      RadioQuestionReporter.new(@data, 'question47', @descriptions).report
       RadioQuestionReporter.new(@data, 'question48', @descriptions).report
 
       output FOOTER
