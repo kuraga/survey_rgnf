@@ -20,10 +20,10 @@ module Generations
       output HEADER
       output "<h1>ВСЕ ПО ПОКОЛЕНИЯМ (всего #{@sample_size})</h1>"
 
-      RadioQuestionGroupedReporter.new(@data, 'questionA', @descriptions).report # text
-      RadioQuestionGroupedReporter.new(@data, 'questionA1', @descriptions).report # text
+      RadioQuestionGroupedReporter.new(@data, 'questionA', @descriptions).report
+      RadioQuestionGroupedReporter.new(@data, 'questionA1', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionB', @descriptions).report
-      RadioQuestionGroupedReporter.new(@data, 'questionC', @descriptions).report # text
+      RadioQuestionGroupedReporter.new(@data, 'questionC', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionD', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionE', @descriptions).report
       CheckboxQuestionGroupedReporter.new(@data, 'questionF', @descriptions).report
