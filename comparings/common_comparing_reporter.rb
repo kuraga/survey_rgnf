@@ -20,10 +20,10 @@ module Comparings
       output HEADER
       output "<h1>ВСЕ (всего #{@sample_size})</h1>"
 
-      RadioQuestionReporter.new(@data, 'questionA', @descriptions).report # text
-      RadioQuestionReporter.new(@data, 'questionA1', @descriptions).report # text
+      RadioQuestionReporter.new(@data, 'questionA', @descriptions).report
+      RadioQuestionReporter.new(@data, 'questionA1', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionB', @descriptions).report
-      RadioQuestionReporter.new(@data, 'questionC', @descriptions).report # text
+      RadioQuestionReporter.new(@data, 'questionC', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionD', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionE', @descriptions).report
       CheckboxQuestionReporter.new(@data, 'questionF', @descriptions).report
@@ -47,7 +47,7 @@ module Comparings
       RadioQuestionReporter.new(@data, 'questionR', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionS', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionT', @descriptions).report
-      TextQuestionReporter.new(@data, 'questionT_1_additional', @descriptions).report
+      RadioQuestionReporter.new(@data, 'questionT_1_additional', @descriptions).report
       TextQuestionReporter.new(@data, 'questionT_2_additional', @descriptions).report
       TextQuestionReporter.new(@data, 'questionT_3_additional', @descriptions).report
       TextQuestionReporter.new(@data, 'questionT_4_additional', @descriptions).report
