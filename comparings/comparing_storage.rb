@@ -33,6 +33,7 @@ module Comparings
       children_unit = JSON.parse json
 
       unit = map_sample children_unit, {
+        '0' => '0',
         'A' => '45',
         'B' => '44',
         'C' => '46',
@@ -116,6 +117,7 @@ module Comparings
       teachers_unit = JSON.parse json
 
       unit = map_sample teachers_unit, {
+        '0' => '0',
         'A' => '43',
         'B' => '42',
         'C' => '44',
@@ -199,6 +201,7 @@ module Comparings
       parents_unit = JSON.parse json
 
       unit = map_sample parents_unit, {
+        '0' => '0',
         'A' => '46',
         'B' => '45',
         'C' => '47',

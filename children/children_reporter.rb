@@ -14,6 +14,7 @@ module Children
 
     def fill_descriptions
       @descriptions = {}
+      @descriptions['question0'] = '0. Вы:'
       @descriptions['question1'] = '1. Скажи, пожалуйста, есть ли в населенном пункте, в котором ты проживаешь, образовательные учреждения (школы, колледжи, ВУЗы)?'
       @descriptions['question2'] = '2. Укажи, пожалуйста, сколько времени у тебя занимает дорога от дома до школы?'
       @descriptions['question3'] = '3. Уточни, пожалуйста, ты учишься в:'
@@ -96,6 +97,9 @@ module Children
       @descriptions['question46'] = '46. Укажи, пожалуйста, регион, в котором ты проживаешь:'
       @descriptions['question47'] = '47. Место проживания:'
       @descriptions['question48'] = '48. Твои родители имеют:'
+      @descriptions['answer0_1'] = 'Школьник'
+      @descriptions['answer0_2'] = 'Учитель'
+      @descriptions['answer0_3'] = 'Родитель'
       @descriptions['answer1_1'] = 'Да, есть все вышеперечисленное (школы, колледжи, ВУЗы)'
       @descriptions['answer1_2'] = 'Да, есть, школы и колледжи, ВУЗы отсутствуют'
       @descriptions['answer1_3'] = 'Да, есть школы и ВУЗы, колледжи отсутствуют'

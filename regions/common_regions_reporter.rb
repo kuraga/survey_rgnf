@@ -20,6 +20,7 @@ module Regions
       output HEADER
       output "<h1>ВСЕ ПО РЕГИОНАМ (всего #{@sample_size})</h1>"
 
+      RadioQuestionGroupedReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionA', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionA1', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionB', @descriptions).report

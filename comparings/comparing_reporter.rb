@@ -14,6 +14,7 @@ module Comparings
 
     def fill_descriptions
       @descriptions = {}
+      @descriptions['question0'] = '0. Вы:'
       @descriptions['questionA'] = 'A. Укажите, пожалуйста, год Вашего рождения:'
       @descriptions['questionA1'] = 'A1. Ваше поколение:'
       @descriptions['questionB'] = 'B. Ваш пол:'
@@ -82,6 +83,9 @@ module Comparings
       @descriptions['questionAM_additional'] = 'AM. Как Вы научились пользоваться Интернетом? (другое)'
       @descriptions['questionAN'] = 'AN. Пожалуйста, выберите, для чего Вы чаще всего используете Интернет?'
       @descriptions['questionAO'] = 'AO. Пожалуйста, выберите, для чего чаще всего используют Интернет Ваши ученики?'
+      @descriptions['answer0_1'] = 'Школьник'
+      @descriptions['answer0_2'] = 'Учитель'
+      @descriptions['answer0_3'] = 'Родитель'
       @descriptions['answerB_1'] = 'Мужской'
       @descriptions['answerB_2'] = 'Женский'
       @descriptions['answerD_1'] = 'село, деревня'

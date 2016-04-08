@@ -20,6 +20,7 @@ module Children
       output HEADER
       output "<h1>ДЕТИ (всего #{@sample_size})</h1>"
 
+      RadioQuestionReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionReporter.new(@data, 'question1', @descriptions).report
       RadioQuestionReporter.new(@data, 'question2', @descriptions).report
       RadioQuestionReporter.new(@data, 'question3', @descriptions).report

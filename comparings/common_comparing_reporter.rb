@@ -20,6 +20,7 @@ module Comparings
       output HEADER
       output "<h1>ВСЕ (всего #{@sample_size})</h1>"
 
+      RadioQuestionReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionA', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionA1', @descriptions).report
       RadioQuestionReporter.new(@data, 'questionB', @descriptions).report
