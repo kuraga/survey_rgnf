@@ -83,13 +83,13 @@ module Comparings
         'AE' => '33',
         'AF' => '34',
         'AG' => '35',
-        'AG_additional' => '_35_1_additional',  # !!!
+        'AG_additional' => '35_1_additional',
         'AH' => '36',
         'AH_additional' => '36_additional',
         'AI' => '37',
         'AJ' => '38',
         'AJ_additional' => '38_additional',
-        'AK_2' => '39_1',  # !!!
+        'AK_2' => '39_1',  # WARNING: "Я сам", сопоставляем с "Сам ребенок" в других анкетах
         'AK_3' => '39_3',
         'AK_4' => '39_4',
         'AK_5' => '39_5',
@@ -167,7 +167,7 @@ module Comparings
         'AE' => '31',
         'AF' => '32',
         'AG' => '33',
-        'AG_additional' => '_33_1_additional',  # !!!
+        'AG_additional' => '33_1_additional',
         'AH' => '34',
         'AH_additional' => '34_additional',
         'AI' => '35',
@@ -251,7 +251,7 @@ module Comparings
         'AE' => '34',
         'AF' => '35',
         'AG' => '36',
-        'AG_additional' => '_36_1_additional',  # !!!
+        'AG_additional' => '36_1_additional',
         'AH' => '37',
         'AH_additional' => '37_additional',
         'AI' => '38',
