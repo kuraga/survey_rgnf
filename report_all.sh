@@ -14,6 +14,8 @@ bundle exec ruby report.rb input/results teachers/teachers_storage=Teachers::Tea
 bundle exec ruby report.rb input/results parents/parents_storage=Parents::ParentsStorage parents/parents_processor=Parents::ParentsProcessor parents/table_parents_reporter=Parents::TableParentsReporter > output/parents.csv
 bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor comparings/table_comparing_reporter=Comparings::TableComparingReporter > output/comparing.csv
 
+bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor,professions/by_question_and_profession_mapper_processor=Professions::ByQuestionAndProfessionMapperProcessor professions/common_professions_reporter=Professions::CommonProfessionsReporter > output/professions.html
+
 bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor,generations/by_question_and_generation_mapper_processor=Generations::ByQuestionAndGenerationMapperProcessor generations/common_generations_reporter=Generations::CommonGenerationsReporter > output/generations.html
 
 bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor,regions/by_question_and_region_mapper_processor=Regions::ByQuestionAndRegionMapperProcessor regions/common_regions_reporter=Regions::CommonRegionsReporter > output/regions.html
