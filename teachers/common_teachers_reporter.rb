@@ -74,7 +74,7 @@ module Teachers
       RadioQuestionReporter.new(@data, 'question31', @descriptions).report
       RadioQuestionReporter.new(@data, 'question32', @descriptions).report
       RadioQuestionReporter.new(@data, 'question33', @descriptions).report
-      TextQuestionReporter.new(@data, 'question_33_1_additional', @descriptions).report
+      TextQuestionReporter.new(@data, 'question33_1_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question34', @descriptions).report
       TextQuestionReporter.new(@data, 'question34_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question35', @descriptions).report
