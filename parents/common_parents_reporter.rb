@@ -75,7 +75,7 @@ module Parents
       RadioQuestionReporter.new(@data, 'question34', @descriptions).report
       RadioQuestionReporter.new(@data, 'question35', @descriptions).report
       RadioQuestionReporter.new(@data, 'question36', @descriptions).report
-      TextQuestionReporter.new(@data, 'question_36_1_additional', @descriptions).report
+      TextQuestionReporter.new(@data, 'question36_1_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question37', @descriptions).report
       TextQuestionReporter.new(@data, 'question37_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question38', @descriptions).report
