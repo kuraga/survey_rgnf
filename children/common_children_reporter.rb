@@ -80,7 +80,7 @@ module Children
       RadioQuestionReporter.new(@data, 'question33', @descriptions).report
       RadioQuestionReporter.new(@data, 'question34', @descriptions).report
       RadioQuestionReporter.new(@data, 'question35', @descriptions).report
-      TextQuestionReporter.new(@data, 'question_35_1_additional', @descriptions).report
+      TextQuestionReporter.new(@data, 'question35_1_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question36', @descriptions).report
       TextQuestionReporter.new(@data, 'question36_additional', @descriptions).report
       RadioQuestionReporter.new(@data, 'question37', @descriptions).report
