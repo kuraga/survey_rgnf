@@ -19,3 +19,5 @@ bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings
 bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor,generations/by_question_and_generation_mapper_processor=Generations::ByQuestionAndGenerationMapperProcessor generations/common_generations_reporter=Generations::CommonGenerationsReporter > output/generations.html
 
 bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor,regions/by_question_and_region_mapper_processor=Regions::ByQuestionAndRegionMapperProcessor regions/common_regions_reporter=Regions::CommonRegionsReporter > output/regions.html
+
+bundle exec ruby report.rb input/results comparings/comparing_storage=Comparings::ComparingStorage comparings/comparing_processor=Comparings::ComparingProcessor,populations/by_question_and_population_mapper_processor=Populations::ByQuestionAndPopulationMapperProcessor populations/common_populations_reporter=Populations::CommonPopulationsReporter > output/populations.html
