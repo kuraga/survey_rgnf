@@ -8,11 +8,6 @@ module Comparings
 
   class ComparingProcessor < Processor
 
-    GENERATIONS = [1900..1922, 1923..1942, 1943..1962, 1963..1982, 1983..2002, 2003..Date.today.year]
-
-    USEFUL_GENERATIONS = [1923..1942, 1943..1962, 1963..1982, 1983..2002, 2003..Date.today.year]
-    USEFUL_REGIONS = ['Московская область', 'Самарская область', 'Забайкальский край']
-
     def process
       data_dup.each_value do |unit|
         # A. Год рождения / Возраст
@@ -22,8 +17,9 @@ module Comparings
         rescue ArgumentError, TypeError
           nil
         else
-          GENERATIONS.find { |generation| generation.include? birthyear }
-        end.to_s
+          generation = GENERATIONS.keys.find { |generation| generation.include? birthyear }
+          GENERATIONS[generation]
+        end
 
         # T. Вспомни, пожалуйста, на кого тебе хотелось быть больше всего похожим (-жей) в детстве? ("На одного из родственников"; укажи, на кого)
         unit['questionT_1_additional'] = IdolsProcessor.new(unit['questionT_1_additional']).process
@@ -32,24 +28,26 @@ module Comparings
       end
 =begin
      .select do |unit_name, unit|
-
-        USEFUL_GENERATIONS.collect do |generation|
-          begin
-            birthyear = Integer unit['questionA']
-          rescue ArgumentError, TypeError
-            false
-          else
-            generation.include? birthyear
-          end
-        end.any?
-
+        USEFUL_GENERATIONS.include? unit['questionA1']
       end.select do |unit_name, unit|
-
         USEFUL_REGIONS.include? unit['questionC']
-
       end
 =end
     end
+
+    protected
+
+    GENERATIONS = {
+      1900..1922 => 'answerA1_1',
+      1923..1942 => 'answerA1_2',
+      1943..1962 => 'answerA1_3',
+      1963..1982 => 'answerA1_4',
+      1983..2002 => 'answerA1_5',
+      2003..Date.today.year => 'answerA1_6'
+    }
+
+    USEFUL_GENERATIONS = ['GS', 'BB', 'X', 'Y', 'Z']
+    USEFUL_REGIONS = ['Московская область', 'Самарская область', 'Забайкальский край']
 
   end
 

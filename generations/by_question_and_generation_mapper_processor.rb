@@ -5,13 +5,21 @@ module Generations
 
   class ByQuestionAndGenerationMapperProcessor < ByQuestionAndGroupMapperProcessor
 
-    GENERATIONS = [1900..1922, 1923..1942, 1943..1962, 1963..1982, 1983..2002, 2003..Date.today.year]
-
-    def initialize(data, generation_question_name = 'questionA')
+    def initialize(data, generation_question_name = 'questionA', generations = DEFAULT_GENERATIONS)
       super data, generation_question_name
+      @generations = generations
     end
 
     protected
+
+    DEFAULT_GENERATIONS = {
+      1900..1922 => 'GG',
+      1923..1942 => 'GS',
+      1943..1962 => 'BB',
+      1963..1982 => 'X',
+      1983..2002 => 'Y',
+      2003..Date.today.year => 'Z'
+    }
 
     def get_group(unit)
       begin
@@ -19,7 +27,8 @@ module Generations
       rescue ArgumentError, TypeError
         nil
       else
-        GENERATIONS.find { |generation| generation.include? birthyear }
+        generation = @generations.keys.find { |generation| generation.include? birthyear }
+        @generations[generation]
       end
     end
 
