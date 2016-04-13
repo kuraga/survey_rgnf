@@ -4,7 +4,7 @@ module Regions
 
   class ByQuestionAndRegionMapperProcessor < ByQuestionAndGroupMapperProcessor
 
-    def initialize(data, region_question_name = 'questionC')
+    def initialize(data, region_question_name)
       super data, region_question_name
     end
 

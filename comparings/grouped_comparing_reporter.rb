@@ -1,12 +1,12 @@
-require_relative 'professions_reporter'
+require_relative 'comparing_reporter'
 require_relative '../lib/reporters/question_reporters/text_question_grouped_reporter'
 require_relative '../lib/reporters/question_reporters/radio_question_grouped_reporter'
 require_relative '../lib/reporters/question_reporters/checkbox_question_grouped_reporter'
 require_relative '../lib/reporters/page_reporter_helper'
 
-module Professions
+module Comparings
 
-  class CommonProfessionsReporter < ProfessionsReporter
+  class GroupedComparingReporter < ComparingReporter
 
     include PageReporterHelper
 
@@ -18,7 +18,7 @@ module Professions
 
     def report
       output HEADER
-      output "<h1>ВСЕ ПО ТИПАМ (всего #{@sample_size})</h1>"
+      output "<h1>ВСЕ (всего #{@sample_size})</h1>"
 
       RadioQuestionGroupedReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionA', @descriptions).report
@@ -48,7 +48,7 @@ module Professions
       RadioQuestionGroupedReporter.new(@data, 'questionR', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionS', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionT', @descriptions).report
-      TextQuestionGroupedReporter.new(@data, 'questionT_1_additional', @descriptions).report
+      RadioQuestionGroupedReporter.new(@data, 'questionT_1_additional', @descriptions).report
       TextQuestionGroupedReporter.new(@data, 'questionT_2_additional', @descriptions).report
       TextQuestionGroupedReporter.new(@data, 'questionT_3_additional', @descriptions).report
       TextQuestionGroupedReporter.new(@data, 'questionT_4_additional', @descriptions).report

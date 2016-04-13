@@ -4,7 +4,7 @@ module Professions
 
   class ByQuestionAndProfessionMapperProcessor < ByQuestionAndGroupMapperProcessor
 
-    def initialize(data, profession_question_name = 'question0', professions = DEFAULT_PROFESSIONS)
+    def initialize(data, profession_question_name, professions = DEFAULT_PROFESSIONS)
       super data, profession_question_name
       @professions = professions
     end

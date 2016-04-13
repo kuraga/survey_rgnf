@@ -4,7 +4,7 @@ module Populations
 
   class ByQuestionAndPopulationMapperProcessor < ByQuestionAndGroupMapperProcessor
 
-    def initialize(data, population_question_name = 'questionD', populations = DEFAULT_POPULATIONS)
+    def initialize(data, population_question_name, populations = DEFAULT_POPULATIONS)
       super data, population_question_name
       @populations = populations
     end

@@ -5,8 +5,8 @@ module Generations
 
   class ByQuestionAndGenerationMapperProcessor < ByQuestionAndGroupMapperProcessor
 
-    def initialize(data, generation_question_name = 'questionA', generations = DEFAULT_GENERATIONS)
-      super data, generation_question_name
+    def initialize(data, birthyear_question_name, generations = DEFAULT_GENERATIONS)
+      super data, birthyear_question_name
       @generations = generations
     end
 
