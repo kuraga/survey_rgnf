@@ -12,19 +12,23 @@ module Populations
     protected
 
     DEFAULT_POPULATIONS = {
-      'answerD_1' => 'село, деревня',
-      'answerD_2' => 'небольшой город',
-      'answerD_3' => 'областной/краевой центр',
-      'answerD_4' => 'мегаполис (большой город)'
+      '1' => 'село, деревня',
+      '2' => 'небольшой город',
+      '3' => 'областной/краевой центр',
+      '4' => 'мегаполис (большой город)'
     }
 
     def get_group(unit)
-      begin
-        population = unit[@group_question_name]
-      rescue ArgumentError, TypeError
-        nil
+      if unit.has_key?(@group_question_name)
+        population_answer = unit[@group_question_name]
+        unless population_answer.nil?
+          m = population_answer.match /_(\d+)$/
+          !m.nil? ? @populations[m[1]] : nil
+        else
+          nil
+        end
       else
-        @populations[population]
+        nil
       end
     end
 

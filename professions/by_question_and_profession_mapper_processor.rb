@@ -12,18 +12,22 @@ module Professions
     protected
 
     DEFAULT_PROFESSIONS = {
-      'answer0_1' => 'школьник',
-      'answer0_2' => 'учитель',
-      'answer0_3' => 'родитель'
+      '1' => 'школьник',
+      '2' => 'учитель',
+      '3' => 'родитель'
     }
 
     def get_group(unit)
-      begin
-        profession = unit[@group_question_name]
-      rescue ArgumentError, TypeError
-        nil
+      if unit.has_key?(@group_question_name)
+        profession_answer = unit[@group_question_name]
+        unless profession_answer.nil?
+          m = profession_answer.match /_(\d+)$/
+          !m.nil? ? @professions[m[1]] : nil
+        else
+          nil
+        end
       else
-        @professions[profession]
+        nil
       end
     end
 

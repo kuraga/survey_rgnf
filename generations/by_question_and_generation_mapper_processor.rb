@@ -22,13 +22,15 @@ module Generations
     }
 
     def get_group(unit)
-      begin
-        birthyear = Integer unit[@group_question_name]
-      rescue ArgumentError, TypeError
-        nil
-      else
-        generation = @generations.keys.find { |generation| generation.include? birthyear }
-        @generations[generation]
+      if unit.has_key?(@group_question_name)
+        begin
+          birthyear = Integer unit[@group_question_name]
+        rescue TypeError
+          nil
+        else
+          generation = @generations.keys.find { |generation| generation.include? birthyear }
+          !generation.nil? ? @generations[generation] : nil
+        end
       end
     end
 
