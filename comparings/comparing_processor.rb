@@ -26,13 +26,6 @@ module Comparings
 
         unit.replace UselessAnswersProcessor.new(unit).process
       end
-=begin
-     .select do |unit_name, unit|
-        USEFUL_GENERATIONS.include? unit['questionA1']
-      end.select do |unit_name, unit|
-        USEFUL_REGIONS.include? unit['questionC']
-      end
-=end
     end
 
     protected
@@ -45,9 +38,6 @@ module Comparings
       1983..2002 => 'answerA1_5',
       2003..Date.today.year => 'answerA1_6'
     }
-
-    USEFUL_GENERATIONS = ['GS', 'BB', 'X', 'Y', 'Z']
-    USEFUL_REGIONS = ['Московская область', 'Самарская область', 'Забайкальский край']
 
   end
 
