@@ -2,7 +2,7 @@ require_relative 'processor'
 
 class UselessAnswersProcessor < Processor
 
-  USELESS_REGEX = /^(?:да|нет?|друг[ои]е|н[ие] ?чего|н[ие] ?кого|н[ие] ?как|[-. =]*).{0,3}$|затрудняюсь|х.?з.?|не ?знаю|не ?случалось|не ?было|не ?помню/i
+  USELESS_REGEX = /^(?:да|нет?|друг[ои]е|н[ие] ?чего|н[ие] ?кого|н[ие] ?как|[-. =]+).{0,3}$|затрудняюсь|х.?з.?|не ?знаю|не ?случалось|не ?было|не ?помню/i
 
   def process
     @data.each_with_object({}) do |(question_name, answer), processed|
