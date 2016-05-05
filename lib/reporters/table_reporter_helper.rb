@@ -25,7 +25,7 @@ module TableReporterHelper
     question_names = @data.values.collect(&:keys).flatten.uniq
     unit_names = @data.keys
 
-    CSV $stdout do |csv|
+    CSV $stdout, col_sep: ",", row_sep: "\r\n", quote_char: '"', force_quotes: true do |csv|
       row = [''] + unit_names.collect(&method(:process_unit_name))
       csv << row
 
