@@ -21,8 +21,7 @@ module Professions
       if unit.has_key?(@group_question_name)
         profession_answer = unit[@group_question_name]
         unless profession_answer.nil?
-          m = profession_answer.match /_(\d+)$/
-          !m.nil? ? @professions[m[1]] : nil
+          profession_answer.match(/_(\d+)$/) { |m| @professions[m[1]] }
         else
           nil
         end

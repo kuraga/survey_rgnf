@@ -22,8 +22,7 @@ module Populations
       if unit.has_key?(@group_question_name)
         population_answer = unit[@group_question_name]
         unless population_answer.nil?
-          m = population_answer.match /_(\d+)$/
-          !m.nil? ? @populations[m[1]] : nil
+          population_answer.match(/_(\d+)$/) { |m| @populations[m[1]] }
         else
           nil
         end
