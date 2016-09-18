@@ -1,3 +1,5 @@
+require 'natural_sort_kernel'
+
 module TableReporterHelper
 
   protected
@@ -8,31 +10,18 @@ module TableReporterHelper
     name[*UNIT_NAME_REGEX_AND_CAPTURE]
   end
 
-  def process_answer(answer)
-    case answer
-    when Array
-      answer.collect { |answer_item| process_answer answer_item }.join(',')
-    when String
-      answer.gsub /^answer(?:\w+_)+(\w+)$/, '\1'
-    when NilClass
-      ''
-    else
-      answer.to_s
-    end
-  end
-
   def report_csv
-    question_names = @data.values.collect(&:keys).flatten.uniq
+    question_names = @data.values.collect(&:keys).flatten.uniq.natural_sort
     unit_names = @data.keys
 
     CSV $stdout, col_sep: ",", row_sep: "\r\n", quote_char: '"', force_quotes: true do |csv|
-      row = [''] + unit_names.collect(&method(:process_unit_name))
+      row = [''] + question_names
       csv << row
 
-      question_names.each do |question_name|
-        row = [@descriptions[question_name]]
-        unit_names.each do |unit_name|
-          row << process_answer(@data[unit_name][question_name])
+      @data.each_pair do |unit_name, unit|
+        row = [unit_name]
+        question_names.each do |question_name|
+          row << @data[unit_name].fetch(question_name, nil)
         end
         csv << row
       end
