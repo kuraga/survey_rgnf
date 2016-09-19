@@ -2,6 +2,10 @@ require 'natural_sort_kernel'
 
 module TableReporterHelper
 
+  def report
+    report_csv
+  end
+
   protected
 
   UNIT_NAME_REGEX_AND_CAPTURE = [/survey(\d+_\w+)\.json/, 1]

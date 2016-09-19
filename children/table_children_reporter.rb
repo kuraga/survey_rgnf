@@ -14,10 +14,6 @@ module Children
       @sample_size = 0
     end
 
-    def report
-      report_csv
-    end
-
   end
 
 end

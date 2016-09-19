@@ -16,10 +16,13 @@ module Children
       @sample_size = data.values.collect(&:length).max
     end
 
-    def report
-      output HEADER
-      output "<h1>ДЕТИ (всего #{@sample_size})</h1>"
+    protected
 
+    def report_annotation
+      output "<h1>Школьники (всего #{@sample_size})</h1>"
+    end
+
+    def report_content
       RadioQuestionReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionReporter.new(@data, 'question1', @descriptions).report
       RadioQuestionReporter.new(@data, 'question2', @descriptions).report
@@ -104,8 +107,6 @@ module Children
       RadioQuestionReporter.new(@data, 'question46', @descriptions).report
       RadioQuestionReporter.new(@data, 'question47', @descriptions).report
       RadioQuestionReporter.new(@data, 'question48', @descriptions).report
-
-      output FOOTER
     end
 
   end

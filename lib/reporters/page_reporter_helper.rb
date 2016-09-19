@@ -1,5 +1,31 @@
 module PageReporterHelper
 
+  def report
+    report_header
+    report_annotation
+    report_content
+    report_footer
+  end
+
+  protected
+
+  def report_header
+    output HEADER
+  end
+
+  def report_annotation
+  end
+
+  def report_content
+    raise NotImplementedError
+  end
+
+  def report_footer
+    output FOOTER
+  end
+
+  private
+
   HEADER = <<HEADER
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +38,7 @@ module PageReporterHelper
   </head>
 
   <body>
+
 HEADER
 
   FOOTER = <<FOOTER

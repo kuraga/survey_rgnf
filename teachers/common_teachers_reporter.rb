@@ -16,10 +16,13 @@ module Teachers
       @sample_size = data.values.collect(&:length).max
     end
 
-    def report
-      output HEADER
-      output "<h1>УЧИТЕЛЯ (всего #{@sample_size})</h1>"
+    protected
 
+    def report_annotation
+      output "<h1>Учителя (всего #{@sample_size})</h1>"
+    end
+
+    def report_content
       RadioQuestionReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionReporter.new(@data, 'question1', @descriptions).report
       RadioQuestionReporter.new(@data, 'question2', @descriptions).report
@@ -96,8 +99,6 @@ module Teachers
       RadioQuestionReporter.new(@data, 'question43', @descriptions).report
       RadioQuestionReporter.new(@data, 'question44', @descriptions).report
       RadioQuestionReporter.new(@data, 'question45', @descriptions).report
-
-      output FOOTER
     end
 
   end

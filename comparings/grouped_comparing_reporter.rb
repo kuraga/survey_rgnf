@@ -16,10 +16,13 @@ module Comparings
       @sample_size = data.values.collect(&:values).collect(&:flatten).collect(&:length)[0]
     end
 
-    def report
-      output HEADER
-      output "<h1>ВСЕ (всего #{@sample_size})</h1>"
+    protected
 
+    def report_annotation
+      output "<h1>Все (всего #{@sample_size})</h1>"
+    end
+
+    def report_content
       RadioQuestionGroupedReporter.new(@data, 'question0', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionA', @descriptions).report
       RadioQuestionGroupedReporter.new(@data, 'questionA1', @descriptions).report
@@ -89,8 +92,6 @@ module Comparings
       TextQuestionGroupedReporter.new(@data, 'questionAM_additional', @descriptions).report
       CheckboxQuestionGroupedReporter.new(@data, 'questionAN', @descriptions).report
       CheckboxQuestionGroupedReporter.new(@data, 'questionAO', @descriptions).report
-
-      output FOOTER
     end
 
   end
