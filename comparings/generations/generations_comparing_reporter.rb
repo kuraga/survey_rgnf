@@ -6,6 +6,12 @@ module Comparings
 
     class GenerationsComparingReporter < Comparings::GroupedComparingReporter
 
+      protected
+
+      def report_annotation
+        output "<h1>Все (всего #{@sample_size}), по поколениям</h1>"
+      end
+
     end
 
   end

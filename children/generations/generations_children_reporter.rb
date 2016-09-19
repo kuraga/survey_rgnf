@@ -6,6 +6,12 @@ module Children
 
     class GenerationsChildrenReporter < Children::GroupedChildrenReporter
 
+      protected
+
+      def report_annotation
+        output "<h1>Школьники (всего #{@sample_size}), по поколениям</h1>"
+      end
+
     end
 
   end

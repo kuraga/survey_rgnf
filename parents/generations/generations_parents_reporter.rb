@@ -6,6 +6,12 @@ module Parents
 
     class GenerationsParentsReporter < Parents::GroupedParentsReporter
 
+      protected
+
+      def report_annotation
+        output "<h1>Родители (всего #{@sample_size}), по поколениям</h1>"
+      end
+
     end
 
   end

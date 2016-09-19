@@ -6,6 +6,12 @@ module Comparings
 
     class RegionsComparingReporter < Comparings::GroupedComparingReporter
 
+      protected
+
+      def report_annotation
+        output "<h1>Все (всего #{@sample_size}), по регионам</h1>"
+      end
+
     end
 
   end

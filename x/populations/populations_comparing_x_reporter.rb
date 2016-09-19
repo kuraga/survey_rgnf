@@ -9,7 +9,7 @@ module X
       protected
 
       def report_annotation
-        output "<h1>Представители X (всего #{@sample_size})</h1>"
+        output "<h1>Представители X (всего #{@sample_size}), по типу населенного пункта</h1>"
       end
 
     end

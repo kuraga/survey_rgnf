@@ -19,7 +19,7 @@ module Comparings
     protected
 
     def report_annotation
-      output "<h1>ВСЕ (всего #{@sample_size})</h1>"
+      output "<h1>Все (всего #{@sample_size})</h1>"
     end
 
     def report_content

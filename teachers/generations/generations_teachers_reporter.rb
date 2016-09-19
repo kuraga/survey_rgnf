@@ -6,6 +6,12 @@ module Teachers
 
     class GenerationsTeachersReporter < Teachers::GroupedTeachersReporter
 
+      protected
+
+      def report_annotation
+        output "<h1>Учителя (всего #{@sample_size}), по поколениям</h1>"
+      end
+
     end
 
   end
