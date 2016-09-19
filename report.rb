@@ -42,16 +42,17 @@ processor_file_and_class_names.each do |processor_file, processor_class_name|
 end
 require_relative reporter_file
 
-
 storage_class = get_class storage_class_name
 storage = storage_class.new
 storage.load input_root
+
 
 processor_file_and_class_names.each do |(processor_file, processor_class_name)|
   processor_class = get_class processor_class_name
   processor = processor_class.new storage.sample
   storage.sample = processor.process
 end
+
 
 reporter_class = get_class reporter_class_name
 reporter = reporter_class.new storage.sample
