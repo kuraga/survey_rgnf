@@ -4,7 +4,7 @@ require 'date'
 
 class UselessUnitsProcessor < Processor
 
-  def initialize(data, birthyear_question_name = 'questionA', region_question_name = 'questionC')
+  def initialize(data, birthyear_question_name, region_question_name)
     super data
 
     @birthyear_question_name = birthyear_question_name
