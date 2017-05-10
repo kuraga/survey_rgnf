@@ -1,6 +1,7 @@
 require_relative '../lib/processors/processor'
 require_relative '../lib/processors/useless_answers_processor'
 require_relative '../lib/processors/idols_processor'
+require_relative '../lib/processors/countries_processor'
 require_relative '../lib/processors/birthyear_processor'
 require 'date'
 
@@ -23,6 +24,9 @@ module Comparings
 
         # T. Вспомни, пожалуйста, на кого тебе хотелось быть больше всего похожим (-жей) в детстве? ("На одного из родственников"; укажи, на кого)
         unit['questionT_1_additional'] = IdolsProcessor.new(unit['questionT_1_additional']).process
+
+        # AG. Хотели бы Вы жить в другой стране? (да; укажите, в какой)
+        unit['questionAG_additional'] = CountriesProcessor.new(unit['questionAG_additional']).process
 
         unit.replace UselessAnswersProcessor.new(unit).process
       end
