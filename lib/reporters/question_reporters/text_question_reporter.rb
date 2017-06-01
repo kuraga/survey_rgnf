@@ -6,7 +6,7 @@ class TextQuestionReporter < QuestionReporter
     output "<h2>#{@descriptions[@question_name]}</h2>"
 
     output '<ul>'
-    @data.each do |answer|
+    @data.sort.each do |answer|
       output "<li><i>#{answer}</i></li>"
     end
     output '</ul>'

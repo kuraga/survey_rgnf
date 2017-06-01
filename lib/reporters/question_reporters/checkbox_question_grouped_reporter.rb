@@ -15,6 +15,7 @@ class CheckboxQuestionGroupedReporter < QuestionReporter
       answer_names += group_answers_flatten
       @amounts_by_group[group] = get_histogram group_answers_flatten
     end
+    @group_names.sort!
 
     @answer_names = answer_names.uniq.sort_by { |answer_name| @descriptions.keys.find_index(answer_name) || Float::INFINITY }
   end
@@ -47,10 +48,11 @@ class CheckboxQuestionGroupedReporter < QuestionReporter
   def output_answer_row(answer_name)
     output '<tr>'
     output "<td><i>#{@descriptions[answer_name] || answer_name}</i></td>"
-    @data.each do |group, group_answers|
+    @group_names.each do |group_name|
+      group_answers = @data[group_name]
       next if group_answers.empty?
 
-      result = @amounts_by_group[group][answer_name]
+      result = @amounts_by_group[group_name][answer_name]
       percentage = get_frequency_percentage result, group_answers.length
 
       output "<td>#{percentage}% (#{result}/#{group_answers.length})</td>"

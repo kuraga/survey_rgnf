@@ -8,15 +8,13 @@ class TextQuestionGroupedReporter < QuestionReporter
     output '<table class="table table-bordered table-stripped table-hover">'
     output '  <tbody>'
 
-    @data.each do |group, group_answers|
+    @data.each do |group_name, group_answers|
       next if group_answers.empty?
-
-      group_name = group.to_s
 
       output "<tr><th>#{group_name}</th></tr>"
       output '<tr><td>'
       output '<ul class="results">'
-      group_answers.each do |answer|
+      group_answers.sort.each do |answer|
         output "<li><i>#{answer}</i></li>"
       end
       output '</ul>'
