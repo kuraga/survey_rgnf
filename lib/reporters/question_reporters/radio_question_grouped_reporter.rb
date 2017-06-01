@@ -54,7 +54,8 @@ class RadioQuestionGroupedReporter < QuestionReporter
       result = @amounts_by_group[group_name][answer_name]
       percentage = get_frequency_percentage result, group_answers.length
 
-      output "<td>#{percentage}% (#{result}/#{group_answers.length})</td>"
+      n = (255.0*(1 - Float(result) / group_answers.length)).round
+      output "<td style='background-color: rgb(#{n}, #{n}, #{255});'>#{percentage}% (#{result}/#{group_answers.length})</td>"
     end
     output '</tr>'      
   end

@@ -18,6 +18,6 @@ class QuestionReporter < Reporter
   end
 
   def get_frequency_percentage(result, total)
-    (100 * Float(result) / total).round 1
+    (100.0 * result / total).round 1
   end
 end
